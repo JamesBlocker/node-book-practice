@@ -9,6 +9,10 @@ const
     booksRouter = require('./routes/books'),
     PORT = 3000
 
-    app.listen(PORT, (err) => {
-        console.log(err || `Console running on port ${PORT}`)
-    })
+mongoose.connect('mongodb://localhost/book-site', (err) => {
+    console.log(err) || "Connected to MongoDB"
+})
+
+app.listen(PORT, (err) => {
+    console.log(err || `Console running on port ${PORT}`)
+})
